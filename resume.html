@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔡承曄 - 個人履歷</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Inter 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* 淺灰色背景 */
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #4f46e5; /* 紫色底線 */
+            border-radius: 9999px; /* 圓角 */
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem; /* 更圓的圓角 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 柔和的陰影 */
+            padding: 1.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* 懸停效果 */
+        }
+        .skill-badge {
+            display: inline-block;
+            background-color: #e0e7ff; /* 淺藍色背景 */
+            color: #4f46e5; /* 深藍色文字 */
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.75rem; /* 圓角 */
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 0.25rem;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start; /* 保持頂部對齊 */
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .timeline-date {
+            flex-shrink: 0;
+            width: 120px; /* 固定日期寬度 */
+            font-weight: 600;
+            color: #4f46e5; /* 紫色日期 */
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            padding-top: 0.2rem; /* 與內容對齊 */
+        }
+        .timeline-content {
+            flex-grow: 1;
+        }
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 55px; /* 調整線的位置 */
+            top: 25px; /* 調整線的起點 */
+            bottom: -15px; /* 調整線的終點 */
+            width: 2px;
+            background-color: #cbd5e1; /* 淺灰色線條 */
+            z-index: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50px; /* 調整點的位置 */
+            top: 20px; /* 調整點的起點 */
+            width: 12px;
+            height: 12px;
+            background-color: #4f46e5; /* 紫色點 */
+            border-radius: 50%;
+            z-index: 1;
+            border: 2px solid #ffffff; /* 白邊 */
+        }
+        .contact-info a {
+            color: #4f46e5;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .contact-info a:hover {
+            color: #6d28d9;
+        }
+        .award-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .award-icon {
+            font-size: 1.25rem;
+            margin-right: 0.75rem;
+            width: 24px; /* 固定圖示寬度 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+
+        <!-- Header 區塊 -->
+        <header class="text-center mb-10 p-6 bg-white rounded-2xl shadow-lg">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-700 mb-2">蔡承曄 Cheng-Yeh Tsai</h1>
+            <p class="text-xl sm:text-2xl text-gray-600 mb-4">iOS App 開發者 | 教學熱忱者 | 專案領導者</p>
+            <p class="text-md sm:text-lg text-gray-700 max-w-2xl mx-auto">
+                擁有三年以上教學與課程設計經驗，擅長以視覺化與模組化方式引導學生理解程式概念。熟悉 iOS App 開發流程，具備良好的團隊協作與技術傳遞能力。
+            </p>
+            <div class="mt-6 flex justify-center space-x-4">
+                <a href="mailto:enokgood2@gmail.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out shadow-md">
+                    <i class="fas fa-envelope mr-2"></i>聯絡我
+                </a>
+                <a href="https://www.linkedin.com/in/cheng-yeh-tsai-678788316/" target="_blank" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out shadow-md">
+                    <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <!-- 主要內容區塊 -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- 專長與技能 -->
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title text-indigo-700">專長與技能</h2>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">程式語言</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">Swift</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Dart</span>
+                        <span class="skill-badge">C語言</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">Java</span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">開發工具與框架</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">iOS App 開發</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Figma</span>
+                        <span class="skill-badge">UI/UX 設計</span>
+                        <span class="skill-badge">Notion</span>
+                        <span class="skill-badge">WordPress</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">軟實力</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">專案管理</span>
+                        <span class="skill-badge">團隊領導</span>
+                        <span class="skill-badge">活動統籌</span>
+                        <span class="skill-badge">創意思維</span>
+                        <span class="skill-badge">教學與簡報</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 專案開發經驗 -->
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title text-indigo-700">專案開發經驗</h2>
+                <ul>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024/10 - 迄今</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">逢甲大學校園自創應用程式《半逢遇甲》</p>
+                            <p class="text-sm text-gray-600">共同創辦人</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024/12 - 迄今</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">逢甲大學校園官方應用程式《行動逢甲》</p>
+                            <p class="text-sm text-gray-600">開發者</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024/06 - 2024/09</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">應用程式《台灣地震速報》</p>
+                            <p class="text-sm text-gray-600">開發者兼顧問</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025/03 - 迄今</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">逢甲大學蘋果公司區域教育培訓中心網站</p>
+                            <p class="text-sm text-gray-600">資訊維護</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Notion範例</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">Apple 地端LLM-AI客服</p>
+                            <p class="text-sm text-gray-600">透過Notion進行指令和團隊合作記錄</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 教學與助教經歷 -->
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title text-indigo-700">教學與助教經歷</h2>
+                <ul>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">113-1學期, 夏季學期</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">逢甲大學 iOS App 程式設計課程助教</p>
+                            <p class="text-sm text-gray-600">協助學生掌握實作技能。</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024, 2025</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">葳格 Swift Coding Camp 學生助教</p>
+                            <p class="text-sm text-gray-600">協助營隊課程進行。</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2.5年經驗</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">國高中數理家教老師</p>
+                            <p class="text-sm text-gray-600">擅長階層式邏輯拆解教學，半年內學生平均進步30-40分。</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - 迄今</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">台中二中現代視覺文化同人社社團課程講師</p>
+                            <p class="text-sm text-gray-600">設計知識與實作兼具的課程，提升學員興趣。</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">iOS Club</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">教學長</p>
+                            <p class="text-sm text-gray-600">創建「設計線」，規劃Figma、UI/UX設計、Keynote動畫與Pitch簡報製作、創意思考等主題式課程。</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025/07/31, 08/01</div>
+                        <div class="timeline-content">
+                            <p class="font-semibold text-gray-800">規劃並推動「Figma x iOS App」高中營隊</p>
+                            <p class="text-sm text-gray-600">預計舉辦。</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 榮譽與認證 -->
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title text-indigo-700">榮譽與認證</h2>
+                <ul>
+                    <li class="award-item">
+                        <span class="award-icon text-yellow-500"><i class="fas fa-star"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">2025 全國電子設計創意競賽</p>
+                            <p class="text-sm text-gray-600">智慧大數據及行動APP類 IEEE Tainan Section 特別獎</p>
+                        </div>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-icon text-yellow-600"><i class="fas fa-medal"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">2024 全國電子設計創意競賽</p>
+                            <p class="text-sm text-gray-600">智慧大數據及行動APP類 第一名</p>
+                        </div>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-icon text-amber-700"><i class="fas fa-medal"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">2024 App 行動應用創新賽</p>
+                            <p class="text-sm text-gray-600">三等獎</p>
+                        </div>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-icon text-amber-700"><i class="fas fa-medal"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">2024 海峽兩岸青少年創客大賽</p>
+                            <p class="text-sm text-gray-600">三等獎</p>
+                        </div>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-icon text-amber-700"><i class="fas fa-medal"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">2024 南投山城數位黑客松</p>
+                            <p class="text-sm text-gray-600">銅獎</p>
+                        </div>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-icon text-gray-500"><i class="fas fa-certificate"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">Apple 認證</p>
+                            <p class="text-sm text-gray-600">Apple Teacher, Apple Teacher Swift Playgrounds, App Development with Swift Associate, App Development with Swift Certified User</p>
+                        </div>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-icon text-gray-500"><i class="fas fa-award"></i></span>
+                        <div>
+                            <p class="font-semibold text-gray-800">Google AI 技能徽章</p>
+                            <p class="text-sm text-gray-600">Develop GenAI Apps with Gemini and Streamlit, Multimodality and Multimodal RAG, Prompt Design in Vertex AI</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 社團與領導經驗 -->
+            <section class="card">
+                <h2 class="text-2xl font-bold section-title text-indigo-700">社團與領導經驗</h2>
+                <ul>
+                    <li class="mb-3">
+                        <p class="font-semibold text-gray-800">iOS Club 社長 (現任) / 教學長</p>
+                        <p class="text-sm text-gray-600">推動管理部門化階層式管理，提升幹部對社團資訊掌握度，增加溝通頻率，達到有效分工。</p>
+                        <p class="text-sm text-gray-600">規劃期末社內競賽，邀請教授擔任評審與講師；舉辦比賽工作坊，提供MAIC參賽隊伍專案建議，最終3組進軍決賽。</p>
+                    </li>
+                    <li>
+                        <p class="font-semibold text-gray-800">TCS中部動漫文化祭副召集人</p>
+                        <p class="text-sm text-gray-600">管理23位幹部，活動當天擔任總場控，調度52位工作人員，活動總人數約850人。</p>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+
+        <!-- Footer 區塊 -->
+        <footer class="text-center mt-10 p-6 bg-white rounded-2xl shadow-lg text-gray-600 text-sm">
+            <p>&copy; 2025 蔡承曄. All rights reserved.</p>
+            <div class="mt-2 contact-info">
+                <p>Email: <a href="mailto:enokgood2@gmail.com">enokgood2@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/cheng-yeh-tsai-678788316/" target="_blank">linkedin.com/in/cheng-yeh-tsai</a></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
