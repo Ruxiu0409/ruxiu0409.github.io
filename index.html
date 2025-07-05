@@ -50,44 +50,34 @@
             font-weight: 600;
             margin: 0.25rem;
         }
-        .timeline-item {
-            display: flex;
-            align-items: flex-start; /* 保持頂部對齊 */
+        .experience-item {
             margin-bottom: 1.5rem;
-            position: relative;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-radius: 0.75rem;
+            border-left: 4px solid #4f46e5;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        .timeline-date {
-            flex-shrink: 0;
-            width: 120px; /* 固定日期寬度 */
+        .experience-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+        }
+        .experience-date {
             font-weight: 600;
-            color: #4f46e5; /* 紫色日期 */
-            font-size: 0.9rem;
-            margin-right: 1rem;
-            padding-top: 0.2rem; /* 與內容對齊 */
+            color: #4f46e5;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
         }
-        .timeline-content {
-            flex-grow: 1;
+        .experience-title {
+            font-weight: 600;
+            color: #374151;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
         }
-        .timeline-item:not(:last-child)::before {
-            content: '';
-            position: absolute;
-            left: 55px; /* 調整線的位置 */
-            top: 25px; /* 調整線的起點 */
-            bottom: -15px; /* 調整線的終點 */
-            width: 2px;
-            background-color: #cbd5e1; /* 淺灰色線條 */
-            z-index: 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: 50px; /* 調整點的位置 */
-            top: 20px; /* 調整點的起點 */
-            width: 12px;
-            height: 12px;
-            background-color: #4f46e5; /* 紫色點 */
-            border-radius: 50%;
-            z-index: 1;
-            border: 2px solid #ffffff; /* 白邊 */
+        .experience-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.4;
         }
         .contact-info a {
             color: #4f46e5;
@@ -111,7 +101,7 @@
     </style>
 </head>
 <body class="text-gray-800">
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-6xl">
 
         <!-- Header 區塊 -->
         <header class="text-center mb-10 p-6 bg-white rounded-2xl shadow-lg">
@@ -174,103 +164,70 @@
             <!-- 專案開發經驗 -->
             <section class="card">
                 <h2 class="text-2xl font-bold section-title text-indigo-700">專案開發經驗</h2>
-                <ul>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024/10 - 迄今</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">逢甲大學校園自創應用程式《半逢遇甲》</p>
-                            <p class="text-sm text-gray-600">共同創辦人</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024/12 - 迄今</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">逢甲大學校園官方應用程式《行動逢甲》</p>
-                            <p class="text-sm text-gray-600">開發者</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024/06 - 2024/09</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">應用程式《台灣地震速報》</p>
-                            <p class="text-sm text-gray-600">開發者兼顧問</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025/03 - 迄今</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">逢甲大學蘋果公司區域教育培訓中心網站</p>
-                            <p class="text-sm text-gray-600">資訊維護</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025/03 - 迄今</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">Apple 地端LLM-AI客服</p>
-                            <p class="text-sm text-gray-600">透過Notion進行指令和團隊合作記錄</p>
-                        </div>
-                    </li>
-                </ul>
+                <div>
+                    <div class="experience-item">
+                        <div class="experience-date">2024/10 - 迄今</div>
+                        <div class="experience-title">逢甲大學校園自創應用程式《半逢遇甲》</div>
+                        <div class="experience-description">共同創辦人</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2024/12 - 迄今</div>
+                        <div class="experience-title">逢甲大學校園官方應用程式《行動逢甲》</div>
+                        <div class="experience-description">開發者</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2024/06 - 2024/09</div>
+                        <div class="experience-title">應用程式《台灣地震速報》</div>
+                        <div class="experience-description">開發者兼顧問</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2025/03 - 迄今</div>
+                        <div class="experience-title">逢甲大學蘋果公司區域教育培訓中心網站</div>
+                        <div class="experience-description">資訊維護</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2025/03 - 迄今</div>
+                        <div class="experience-title">Apple 地端LLM-AI客服</div>
+                        <div class="experience-description">透過Notion進行指令和團隊合作記錄</div>
+                    </div>
+                </div>
             </section>
 
             <!-- 教學與助教經歷 -->
             <section class="card">
                 <h2 class="text-2xl font-bold section-title text-indigo-700">教學與助教經歷</h2>
-                <ul>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">113-1學期, 夏季學期</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">逢甲大學 iOS App 程式設計課程助教</p>
-                            <p class="text-sm text-gray-600">協助學生掌握實作技能。</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2024, 2025</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">葳格 Swift Coding Camp 學生助教</p>
-                            <p class="text-sm text-gray-600">協助營隊課程進行。</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2.5年經驗</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">國高中數理家教老師</p>
-                            <p class="text-sm text-gray-600">擅長階層式邏輯拆解教學，半年內學生平均進步30-40分。</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2023 - 迄今</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">台中二中現代視覺文化同人社社團課程講師</p>
-                            <p class="text-sm text-gray-600">設計知識與實作兼具的課程，提升學員興趣。</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">iOS Club</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">教學長</p>
-                            <p class="text-sm text-gray-600">創建「設計線」，規劃Figma、UI/UX設計、Keynote動畫與Pitch簡報製作、創意思考等主題式課程。</p>
-                        </div>
-                    </li>
-                    <li class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2025/07/31, 08/01</div>
-                        <div class="timeline-content">
-                            <p class="font-semibold text-gray-800">規劃並推動「Figma x iOS App」高中營隊</p>
-                            <p class="text-sm text-gray-600">預計舉辦。</p>
-                        </div>
-                    </li>
-                </ul>
+                <div>
+                    <div class="experience-item">
+                        <div class="experience-date">113-1學期, 夏季學期</div>
+                        <div class="experience-title">逢甲大學 iOS App 程式設計課程助教</div>
+                        <div class="experience-description">協助學生掌握實作技能。</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2024, 2025</div>
+                        <div class="experience-title">葳格 Swift Coding Camp 學生助教</div>
+                        <div class="experience-description">協助營隊課程進行。</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2.5年經驗</div>
+                        <div class="experience-title">國高中數理家教老師</div>
+                        <div class="experience-description">擅長階層式邏輯拆解教學，半年內學生平均進步30-40分。</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2023 - 迄今</div>
+                        <div class="experience-title">台中二中現代視覺文化同人社社團課程講師</div>
+                        <div class="experience-description">設計知識與實作兼具的課程，提升學員興趣。</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">iOS Club</div>
+                        <div class="experience-title">教學長</div>
+                        <div class="experience-description">創建「設計線」，規劃Figma、UI/UX設計、Keynote動畫與Pitch簡報製作、創意思考等主題式課程。</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-date">2025/07/31, 08/01</div>
+                        <div class="experience-title">規劃並推動「Figma x iOS App」高中營隊</div>
+                        <div class="experience-description">預計舉辦。</div>
+                    </div>
+                </div>
             </section>
 
             <!-- 榮譽與認證 -->
